@@ -4,12 +4,13 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 import com.facebook.entity.FacebookUser;
+import com.facebook.exception.UserNotFoundException;
 import com.facebook.service.FacebookService;
 import com.facebook.service.FacebookServiceInterface;
 
 public class FacebookController implements FacebookControllerInterface{
 
-	public void createProfileController() {
+	public void createProfileController() throws Exception{
 		Scanner sc=new Scanner(System.in);
 		
 		System.out.println("enter name");
@@ -139,7 +140,7 @@ Scanner sc=new Scanner(System.in);
 		
 	}
 
-	public void deleteProfileController() {
+	public void deleteProfileController()throws UserNotFoundException {
 		Scanner sc=new Scanner(System.in);
 		System.out.println("enter email to delete profile");
 		String email=sc.next();
@@ -152,6 +153,9 @@ Scanner sc=new Scanner(System.in);
 		
 		if(fc) {
 			System.out.println("profile deleted");
+		}
+		else {
+			throw new UserNotFoundException("user email "+email+" not found");
 		}
 		
 	}

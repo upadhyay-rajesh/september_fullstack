@@ -1,8 +1,10 @@
 package com.facebook.controller;
 
+import com.facebook.exception.UserNotFoundException;
+
 public interface FacebookControllerInterface {
 
-	void createProfileController();
+	void createProfileController()throws Exception;
 
 	void viewProfileController();
 
@@ -10,7 +12,7 @@ public interface FacebookControllerInterface {
 
 	void viewAllProfileController();
 
-	void deleteProfileController();
+	void deleteProfileController()throws UserNotFoundException;
 
 	void sendfriendRequestController();
 

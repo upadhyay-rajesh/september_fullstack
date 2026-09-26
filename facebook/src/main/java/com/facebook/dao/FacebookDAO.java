@@ -8,9 +8,9 @@ import com.facebook.utility.MySQLDatabaseConnection;
 
 public class FacebookDAO implements FacebookDAOInterface{
 
-	public int createProfileDAO(FacebookUser fc) {
+	public int createProfileDAO(FacebookUser fc)throws Exception {
 		int i=0;
-		try {
+		//try {
 		Connection con=MySQLDatabaseConnection.getConnection();
 	
 		PreparedStatement ps = con.prepareStatement("insert into facebookuser values(?,?,?,?)");
@@ -21,18 +21,19 @@ public class FacebookDAO implements FacebookDAOInterface{
 
 		i=ps.executeUpdate();
 	
-		}
-		catch(Exception e) {
-			e.printStackTrace();
-		}
+		//}
+	//	catch(Exception e) {
+	//		e.printStackTrace();
+	//	}
 		return i;
 	}
 
 	public FacebookUser viewProfileDAO(FacebookUser fu) {
 		FacebookUser fb=null;
+		 //con=null;
 		
-		try {
-			Connection con=MySQLDatabaseConnection.getConnection();
+		try(Connection con=MySQLDatabaseConnection.getConnection();) {
+			
 		
 			PreparedStatement ps = con.prepareStatement("select * from facebookuser where email=?");
 			
@@ -52,12 +53,22 @@ public class FacebookDAO implements FacebookDAOInterface{
 				fb.setEmail(email);
 				fb.setAddress(address);
 			}
+			
+			
 		
 			}
 			catch(Exception e) {
 				e.printStackTrace();
 			}
-		
+		//if we will write try with resources(try(Connection con=MySQLDatabaseConnection.getConnection();)) then finally block not required because system will close all resources automatically
+			/*finally {
+				try {
+					con.close();
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}*/
 		return fb;
 	}
 

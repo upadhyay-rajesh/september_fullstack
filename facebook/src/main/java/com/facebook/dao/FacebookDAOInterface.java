@@ -6,7 +6,7 @@ import com.facebook.entity.FacebookUser;
 
 public interface FacebookDAOInterface {
 
-	int createProfileDAO(FacebookUser fc);
+	int createProfileDAO(FacebookUser fc)throws Exception;
 
 	FacebookUser viewProfileDAO(FacebookUser fu);
 

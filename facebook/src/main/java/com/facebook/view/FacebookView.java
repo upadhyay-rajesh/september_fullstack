@@ -7,7 +7,7 @@ import com.facebook.controller.FacebookControllerInterface;
 
 public class FacebookView {
 
-	public static void main(String[] args) {
+	public static void main(String[] args)throws Exception {
 		String ss="y";
 		Scanner sc=new Scanner(System.in);
 		

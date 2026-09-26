@@ -14,7 +14,7 @@ public interface FacebookServiceInterface {
 
 	FacebookUser viewProfileService(FacebookUser fu);
 
-	int createProfileService(FacebookUser fc);
+	int createProfileService(FacebookUser fc)throws Exception;
 
 	boolean editProfileAddressService(FacebookUser fc);
 

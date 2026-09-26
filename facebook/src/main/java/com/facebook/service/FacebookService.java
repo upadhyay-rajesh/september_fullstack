@@ -8,7 +8,7 @@ import com.facebook.entity.FacebookUser;
 
 public class FacebookService implements FacebookServiceInterface{
 
-	public int createProfileService(FacebookUser fc) {
+	public int createProfileService(FacebookUser fc) throws Exception{
 		FacebookDAOInterface fd = new FacebookDAO();
 		int i =fd.createProfileDAO(fc);
 		return i;
