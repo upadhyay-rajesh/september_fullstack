@@ -1,6 +1,7 @@
 package com.facebook.dao;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import com.facebook.entity.FacebookUser;
 
@@ -14,7 +15,7 @@ public interface FacebookDAOInterface {
 
 	boolean deleteProfileDAO(FacebookUser fu);
 
-	ArrayList<FacebookUser> viewAllProfileDAO();
+	List<FacebookUser> viewAllProfileDAO();
 
 	boolean editProfileAddressDAO(FacebookUser fc);
 

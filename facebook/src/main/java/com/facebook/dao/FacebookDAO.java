@@ -2,9 +2,11 @@ package com.facebook.dao;
 
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.List;
 
 import com.facebook.entity.FacebookUser;
 import com.facebook.utility.MySQLDatabaseConnection;
+import com.mysql.cj.protocol.Resultset;
 
 public class FacebookDAO implements FacebookDAOInterface{
 
@@ -120,10 +122,10 @@ public class FacebookDAO implements FacebookDAOInterface{
 	//int i[] = new int[9];
 	
 	
-	public ArrayList<FacebookUser> viewAllProfileDAO() {
+	public List<FacebookUser> viewAllProfileDAO() {
 		FacebookUser    ff[]  = new FacebookUser[20];
 		
-		ArrayList<FacebookUser> ll=new ArrayList<FacebookUser>();
+		List<FacebookUser> ll=new ArrayList<FacebookUser>();
 		
 		
 		try {

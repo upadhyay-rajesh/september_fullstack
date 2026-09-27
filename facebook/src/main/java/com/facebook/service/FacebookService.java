@@ -1,6 +1,7 @@
 package com.facebook.service;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import com.facebook.dao.FacebookDAO;
 import com.facebook.dao.FacebookDAOInterface;
@@ -30,7 +31,7 @@ public class FacebookService implements FacebookServiceInterface{
 		return fd.deleteProfileDAO(fu);
 	}
 
-	public ArrayList<FacebookUser> viewAllProfileService() {
+	public List<FacebookUser> viewAllProfileService() {
 		FacebookDAOInterface fd = new FacebookDAO();
 		return fd.viewAllProfileDAO();
 	}

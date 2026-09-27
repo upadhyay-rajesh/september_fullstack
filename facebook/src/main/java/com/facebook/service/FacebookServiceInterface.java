@@ -1,12 +1,13 @@
 package com.facebook.service;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import com.facebook.entity.FacebookUser;
 
 public interface FacebookServiceInterface {
 
-	ArrayList<FacebookUser> viewAllProfileService();
+	List<FacebookUser> viewAllProfileService();
 
 	boolean deleteProfileService(FacebookUser fu);
 

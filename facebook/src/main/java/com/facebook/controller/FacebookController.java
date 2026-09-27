@@ -1,12 +1,16 @@
 package com.facebook.controller;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 import java.util.Scanner;
 
 import com.facebook.entity.FacebookUser;
 import com.facebook.exception.UserNotFoundException;
 import com.facebook.service.FacebookService;
 import com.facebook.service.FacebookServiceInterface;
+import com.facebook.utility.SortByAddress;
+import com.facebook.utility.SortByName;
 
 public class FacebookController implements FacebookControllerInterface{
 
@@ -162,9 +166,34 @@ Scanner sc=new Scanner(System.in);
 
 	public void viewAllProfileController() {
 		FacebookServiceInterface fs = new FacebookService();
-		ArrayList<FacebookUser> fc =  fs.viewAllProfileService();
+		List<FacebookUser> fc =  fs.viewAllProfileService();
 		
 		System.out.println(fc.size()+" record found in database");
+		System.out.println("without sorting by name");
+		for(FacebookUser f:fc) {
+			System.out.println("******************************** ");
+			System.out.println("Name is "+f.getName());
+			System.out.println("Password is "+f.getPassword());
+			System.out.println("Email is "+f.getEmail());
+			System.out.println("Address is "+f.getAddress());
+		}
+		
+		Collections.sort(fc, new SortByName());
+		
+		System.out.println(" sorting by name");
+		
+		for(FacebookUser f:fc) {
+			System.out.println("******************************** ");
+			System.out.println("Name is "+f.getName());
+			System.out.println("Password is "+f.getPassword());
+			System.out.println("Email is "+f.getEmail());
+			System.out.println("Address is "+f.getAddress());
+		}
+		
+	
+		Collections.sort(fc, new SortByAddress());
+		
+		System.out.println(" sorting by address");
 		
 		for(FacebookUser f:fc) {
 			System.out.println("******************************** ");
