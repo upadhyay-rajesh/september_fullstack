@@ -1,0 +1,10 @@
+const products=[
+{id:1,name:"Elegant Summer Dress",category:"women",price:1499,oldPrice:2499,sale:true,image:"https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=700&q=80",description:"A stylish summer dress designed for comfort and everyday elegance."},
+{id:2,name:"Premium Casual Shirt",category:"men",price:1299,oldPrice:1899,sale:true,image:"https://images.unsplash.com/photo-1596755389378-c31d21fd1273?auto=format&fit=crop&w=700&q=80",description:"Premium casual shirt made for a smart and comfortable look."},
+{id:3,name:"Classic Denim Jeans",category:"men",price:1799,oldPrice:0,sale:false,image:"https://images.unsplash.com/photo-1541099649105-f69ad21f3246?auto=format&fit=crop&w=700&q=80",description:"Classic denim jeans with a modern fit."},
+{id:4,name:"Designer Fashion Top",category:"women",price:999,oldPrice:1499,sale:true,image:"https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=700&q=80",description:"A fashionable top for casual and semi-formal occasions."},
+{id:5,name:"Premium Sneakers",category:"shoes",price:2499,oldPrice:2999,sale:true,image:"https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=700&q=80",description:"Comfortable premium sneakers for everyday style."},
+{id:6,name:"Women's Fashion Shoes",category:"shoes",price:1999,oldPrice:0,sale:false,image:"https://images.unsplash.com/photo-1543163521-1bf539c55dd2?auto=format&fit=crop&w=700&q=80",description:"Elegant footwear designed to complete your look."},
+{id:7,name:"Kids Casual Outfit",category:"kids",price:899,oldPrice:1199,sale:true,image:"https://images.unsplash.com/photo-1519457431-44ccd64a579b?auto=format&fit=crop&w=700&q=80",description:"Comfortable and colorful fashion for kids."},
+{id:8,name:"Casual Everyday Shoes",category:"shoes",price:1599,oldPrice:1999,sale:true,image:"https://images.unsplash.com/photo-1560769629-975ec94e6a86?auto=format&fit=crop&w=700&q=80",description:"Versatile shoes for everyday use."}
+];
