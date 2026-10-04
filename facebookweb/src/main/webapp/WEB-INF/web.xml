@@ -10,8 +10,78 @@
   	<description></description>
   	<servlet-class>com.facebookweb.controller.RegistrationServlet</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>LoginServlet</servlet-name>
+  	<display-name>LoginServlet</display-name>
+  	<description></description>
+  	<servlet-class>com.facebookweb.controller.LoginServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>ViewProfileServlet</servlet-name>
+  	<display-name>ViewProfileServlet</display-name>
+  	<description></description>
+  	<servlet-class>com.facebookweb.controller.ViewProfileServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>EditProfileServlet</servlet-name>
+  	<display-name>EditProfileServlet</display-name>
+  	<description></description>
+  	<servlet-class>com.facebookweb.controller.EditProfileServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>ViewAllProfileServlet</servlet-name>
+  	<display-name>ViewAllProfileServlet</display-name>
+  	<description></description>
+  	<servlet-class>com.facebookweb.controller.ViewAllProfileServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>DeleteProfileServlet</servlet-name>
+  	<display-name>DeleteProfileServlet</display-name>
+  	<description></description>
+  	<servlet-class>com.facebookweb.controller.DeleteProfileServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>SearchProfileServlet</servlet-name>
+  	<display-name>SearchProfileServlet</display-name>
+  	<description></description>
+  	<servlet-class>com.facebookweb.controller.SearchProfileServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>LogoutProfileServlet</servlet-name>
+  	<display-name>LogoutProfileServlet</display-name>
+  	<description></description>
+  	<servlet-class>com.facebookweb.controller.LogoutProfileServlet</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>RegistrationServlet</servlet-name>
   	<url-pattern>/RegistrationServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>LoginServlet</servlet-name>
+  	<url-pattern>/LoginServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ViewProfileServlet</servlet-name>
+  	<url-pattern>/ViewProfileServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>EditProfileServlet</servlet-name>
+  	<url-pattern>/EditProfileServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ViewAllProfileServlet</servlet-name>
+  	<url-pattern>/ViewAllProfileServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>DeleteProfileServlet</servlet-name>
+  	<url-pattern>/DeleteProfileServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>SearchProfileServlet</servlet-name>
+  	<url-pattern>/SearchProfileServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>LogoutProfileServlet</servlet-name>
+  	<url-pattern>/LogoutProfileServlet</url-pattern>
   </servlet-mapping>
 </web-app>
