@@ -9,6 +9,104 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
     <title>Hello, world!</title>
+    
+    <script>
+     function validateMyPage(){
+    	 
+    	 	var v = document.getElementById("name").value;
+    	 	if(v.length == 0){
+    	 		//alert("name field is mandatory");
+    	 		document.getElementById("result").innerHTML="<font color=red>name field is mandatory</font>";
+    	 	}
+    	 	else{
+    	 		if(v.length <3){
+        	 		//alert("name field minimum size must be 3");
+        	 		document.getElementById("result").innerHTML="<font color=red>name field minimum size must be 3</font>";
+        	 	}
+    	 		else{
+    	 			//alert("you clicked button Mr. "+v);
+    	 			document.getElementById("result").innerHTML="<font color=green>you clicked button Mr. </font>"+v;
+    	 		}
+    	 	}
+    	 	
+     }
+     function populateList(){
+    	 document.getElementById("pp").innerHTML="<ol><li>TV</li><li>Freez</li><li>smartphone</li><li>mobile</li></ol>";
+     }
+     function unpopulateList(){
+    	 document.getElementById("pp").innerHTML="";
+     }
+    
+     function validateEmail(){
+    	 var v = document.getElementById("email").value;
+    	 
+    	 //step 1 how to get xhr to communicate with servlet
+    	 var xhr = new XMLHttpRequest();
+    	 //step 2 how to get connection with servlet
+    	 xhr.open("GET","EmailValidatorServlet?e1="+v,true);
+    	 //step 3 how to send request
+    	 xhr.send();
+    	 //step 4 how to get response from servlet
+    	 xhr.onreadystatechange=function(){
+    		 if(xhr.readyState==4){
+    			var response =  xhr.responseText;
+    			//alert(response);
+    			document.getElementById("emailResult").innerHTML="<font color=red>"+response+"</font>";
+    		 }
+    	 }
+     }
+     
+     function loadCountry(){
+    	 var xhr = new XMLHttpRequest();
+    	 xhr.open("GET","LoadCountryServlet",true);
+    	 xhr.send();
+    	 xhr.onreadystatechange=function(){
+    		 if(xhr.readyState==4){
+    			var response =  xhr.responseText;
+    			//alert(response);
+    			document.getElementById("cou").innerHTML=response;
+    		 }
+    	 }
+     }
+     
+     function loadState(){
+    	 var v = document.getElementById("country").value;
+    	 alert(v);
+    	 var xhr = new XMLHttpRequest();
+    	 xhr.open("GET","LoadStateServlet?cid="+v,true);
+    	 xhr.send();
+    	 xhr.onreadystatechange=function(){
+    		 if(xhr.readyState==4){
+    			var response =  xhr.responseText;
+    			//alert(response);
+    			document.getElementById("st").innerHTML=response;
+    		 }
+    	 }
+     }
+     
+     function loadCaptcha(){
+    	 var xhr = new XMLHttpRequest();
+    	 xhr.open("GET","LoadCaptchaServlet",true);
+    	 xhr.send();
+    	 xhr.onreadystatechange=function(){
+    		 if(xhr.readyState==4){
+    			var response =  xhr.responseText;
+    			//alert(response);
+    			document.getElementById("captcha").innerHTML=response;
+    		 }
+    	 }
+     }
+     
+     function validateCaptcha(){
+    	 var v = document.getElementById("cvalue").value;
+    	 var v1 = document.getElementById("evalue").value;
+    	 if(v===v1){
+    		 document.getElementById("bb").disabled=false;
+    	 }
+     }
+    
+    </script>
+    
   </head>
   <body>
     <h1>Sign Up</h1>
@@ -18,12 +116,13 @@
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-  
+  <p onMouseOver="populateList()"   onMouseOut="unpopulateList()">Electronics</p><div id="pp"></div>
   <form action="RegistrationServlet" method="post">
  
   <div class="form-group">
     <label for="name">Name</label>
-    <input type="text" class="form-control w-25" id="name" name="n" aria-describedby="emailHelp" placeholder="Enter name">
+    <input type="text" required minLength="3" maxLength="6" pattern="" class="form-control w-25" id="name" name="n" aria-describedby="emailHelp" placeholder="Enter name" >
+    
    
   </div>
   <div class="form-group">
@@ -32,17 +131,22 @@
   </div>
   <div class="form-group">
     <label for="email">Email</label>
-    <input type="email"  class="form-control w-25" id="email" name="ee" aria-describedby="emailHelp" placeholder="Enter email">
-    
+    <input type="email"  onkeyup="validateEmail()" onblur="loadCaptcha()" class="form-control w-25" id="email" name="ee" aria-describedby="emailHelp" placeholder="Enter email"><div id="emailResult"></div>
+    <div id="captcha"></div>
   </div>
   <div class="form-group">
     <label for="address">Address</label>
-    <input type="text"  class="form-control w-25" id="address" name="aa" aria-describedby="emailHelp" placeholder="Enter address">
+    <input type="text"  class="form-control w-25" id="address" name="aa" aria-describedby="emailHelp" placeholder="Enter address" onBlur="loadCountry()">
     
+  </div>
+   <div class="form-group">
+    <label for="country">Country</label>
+    <div id="cou"></div><div id="st"></div>
+   
   </div>
   
  
-  <button type="submit" class="btn btn-primary">Sign Up</button>
+  <button type="submit" disabled id="bb" class="btn btn-primary">Sign Up</button>
 
 </form>
   

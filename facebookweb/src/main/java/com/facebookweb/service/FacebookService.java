@@ -4,7 +4,9 @@ import java.util.List;
 
 import com.facebookweb.dao.FacebookDAO;
 import com.facebookweb.dao.FacebookDAOInterface;
+import com.facebookweb.entity.Country;
 import com.facebookweb.entity.FacebookUser;
+import com.facebookweb.entity.State;
 
 public class FacebookService implements FacebookServicInterface {
 
@@ -43,6 +45,30 @@ public class FacebookService implements FacebookServicInterface {
 		FacebookDAOInterface fd = new FacebookDAO();
 		return fd.searchProfileDAO();
 		
+	}
+
+	@Override
+	public int editProfileService(FacebookUser fb) {
+		FacebookDAOInterface fd = new FacebookDAO();
+		return fd.editProfileDAO(fb);
+	}
+
+	@Override
+	public boolean checkEmailService(FacebookUser fb) {
+		FacebookDAOInterface fd = new FacebookDAO();
+		return fd.checkEmailDAO(fb);
+	}
+
+	@Override
+	public List<Country> loadCountryService() {
+		FacebookDAOInterface fd = new FacebookDAO();
+		return fd.loadCountryDAO();
+	}
+
+	@Override
+	public List<State> loadStateService(Country c) {
+		FacebookDAOInterface fd = new FacebookDAO();
+		return fd.loadStateDAO(c);
 	}
 
 }

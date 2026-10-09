@@ -52,6 +52,36 @@
   	<description></description>
   	<servlet-class>com.facebookweb.controller.LogoutProfileServlet</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>EditProfileServlet1</servlet-name>
+  	<display-name>EditProfileServlet1</display-name>
+  	<description></description>
+  	<servlet-class>com.facebookweb.controller.EditProfileServlet1</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>EmailValidatorServlet</servlet-name>
+  	<display-name>EmailValidatorServlet</display-name>
+  	<description></description>
+  	<servlet-class>com.facebookweb.controller.EmailValidatorServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>LoadCountryServlet</servlet-name>
+  	<display-name>LoadCountryServlet</display-name>
+  	<description></description>
+  	<servlet-class>com.facebookweb.controller.LoadCountryServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>LoadStateServlet</servlet-name>
+  	<display-name>LoadStateServlet</display-name>
+  	<description></description>
+  	<servlet-class>com.facebookweb.controller.LoadStateServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>LoadCaptchaServlet</servlet-name>
+  	<display-name>LoadCaptchaServlet</display-name>
+  	<description></description>
+  	<servlet-class>com.facebookweb.controller.LoadCaptchaServlet</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>RegistrationServlet</servlet-name>
   	<url-pattern>/RegistrationServlet</url-pattern>
@@ -83,5 +113,25 @@
   <servlet-mapping>
   	<servlet-name>LogoutProfileServlet</servlet-name>
   	<url-pattern>/LogoutProfileServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>EditProfileServlet1</servlet-name>
+  	<url-pattern>/EditProfileServlet1</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>EmailValidatorServlet</servlet-name>
+  	<url-pattern>/EmailValidatorServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>LoadCountryServlet</servlet-name>
+  	<url-pattern>/LoadCountryServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>LoadStateServlet</servlet-name>
+  	<url-pattern>/LoadStateServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>LoadCaptchaServlet</servlet-name>
+  	<url-pattern>/LoadCaptchaServlet</url-pattern>
   </servlet-mapping>
 </web-app>

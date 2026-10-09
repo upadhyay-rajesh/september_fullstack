@@ -36,6 +36,8 @@ public class LoginServlet extends HttpServlet {
 				//how to store data i.e. userid in session?
 				ss.setAttribute("myuserid", email);
 				
+				//ss.setMaxInactiveInterval(5); //this will set session time for 5 minutes
+				
 				out.println("Welcome "+email);
 				out.println("<br><a href=ViewProfileServlet>view profile</a>");
 				out.println("<br><a href=EditProfileServlet>edit profile</a>");
