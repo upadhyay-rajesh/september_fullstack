@@ -1,8 +1,13 @@
 package com.facebookspringweb.entity;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class FacebookUser {
 	private String name;
 	private String password;
+	@Id
 	private String email;
 	private String address;
 	public String getName() {
