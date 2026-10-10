@@ -7,6 +7,12 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.EntityTransaction;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+
 import com.facebookweb.entity.Country;
 import com.facebookweb.entity.FacebookUser;
 import com.facebookweb.entity.State;
@@ -17,7 +23,7 @@ public class FacebookDAO implements FacebookDAOInterface {
 	@Override
 	public int createProfileDAO(FacebookUser fb) {
 		int i=0;
-		try {
+		/*try {
 			Class.forName("com.mysql.jdbc.Driver");
 			Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/facebookdb","root","rajesh");
 			PreparedStatement ps=con.prepareStatement("insert into facebookuser values(?,?,?,?)");
@@ -31,7 +37,18 @@ public class FacebookDAO implements FacebookDAOInterface {
 		}
 		catch(Exception e) {
 			e.printStackTrace();
-		}
+		}*/
+		SessionFactory sf = new Configuration().configure().buildSessionFactory();
+		//here configure() method by default load hibernate.cfg.xml file, if configuration file name changed like gagan.cfg.xml then we have to pass this inside configure() method as below
+		//SessionFactory sf = new Configuration().configure("gagan.cfg.xml").buildSessionFactory();
+		//buildSessionFactory() method will load xml file content and create database connection, table
+		
+		Session ss = sf.openSession();
+		EntityTransaction et = ss.getTransaction();
+		et.begin();
+			ss.save(fb);
+		et.commit();
+		i=1;
 		return i;
 	}
 

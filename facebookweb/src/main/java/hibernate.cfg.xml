@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-configuration PUBLIC 
+
+  "-//Hibernate/Hibernate Configuration DTD 3.0//EN" 
+
+  "https://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<!-- Version 8 MySQL hiberante-cfg.xml example for Hibernate 5 -->
+
+<hibernate-configuration>
+
+  <session-factory>
+
+    <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+
+    <!-- property name="connection.driver_class">com.mysql.jdbc.Driver</property -->
+
+    <property name="connection.url">jdbc:mysql://localhost:3306/septemberhibernate</property>
+
+    <property name="dialect">org.hibernate.dialect.MySQL8Dialect</property><!-- dialect class will generate compatibility(data type mapping etc) between java entity and database table -->
+
+    <property name="connection.username">root</property>
+
+    <property name="connection.password">rajesh</property>
+
+  
+
+    <property name="show_sql">true</property><!-- it will map HQL to SQL and show corresponding SQL query on console -->
+
+  
+
+    <property name="hbm2ddl.auto">update</property><!-- here update will check database for table if table exist it will not do anything but if table not exist then only it will create new table inside database -->
+
+     <mapping class="com.facebookweb.entity.FacebookUser" /><!-- it will indicate like which entity class object you want hibernate to store or retrive from database -->
+
+  </session-factory>
+
+</hibernate-configuration>
