@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Register</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css"></head><body>
+<nav class="navbar navbar-expand-lg bg-white border-bottom sticky-top"><div class="container">
+<a class="navbar-brand" href="home.html">Instagram Clone</a>
+<div><a class="btn btn-sm btn-outline-primary me-2" href="profile.html">Profile</a><button class="btn btn-sm btn-outline-danger" onclick="logout()">Logout</button></div>
+</div></nav>
+
+<div class="container py-5"><div class="card mx-auto" style="max-width:500px"><div class="card-body">
+<h2>Register</h2><div id="msg" class="text-danger"></div>
+<form id="registerForm" action="register" method="post"> <!-- onsubmit="event.preventDefault();register()"> --> 
+<input name="fullName" class="form-control mb-3" placeholder="Full name">
+<input name="username" class="form-control mb-3" placeholder="Username" required>
+<input name="email" type="email" class="form-control mb-3" placeholder="Email" required>
+<input name="password" type="password" class="form-control mb-3" placeholder="Password" required>
+<button class="btn btn-success w-100" type="submit">Register</button></form></div></div></div>
+
+<script src="js/app.js"></script><script src="js/register.js"></script></body></html>
+
+<%= request.getAttribute("result") %>
