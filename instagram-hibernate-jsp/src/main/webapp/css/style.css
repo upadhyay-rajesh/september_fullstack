@@ -1,0 +1,20 @@
+/* Applies a readable default font to every page. */
+body { font-family: Arial, sans-serif; background: #f3f4f6; color: #222; margin: 0; padding: 24px; }
+/* Styles the centered form cards. */
+.card { max-width: 440px; margin: 40px auto; padding: 28px; background: white; border-radius: 10px; box-shadow: 0 2px 12px #0001; }
+/* Constrains main content width. */
+.content { max-width: 850px; margin: 24px auto; }
+/* Styles navigation bar. */
+header { max-width: 850px; margin: 0 auto; padding: 14px; background: white; }
+/* Displays labels on separate lines. */
+label { display: block; margin-top: 14px; font-weight: bold; }
+/* Styles form fields consistently. */
+input, textarea { box-sizing: border-box; width: 100%; margin-top: 6px; padding: 10px; border: 1px solid #bbb; border-radius: 5px; }
+/* Styles submit buttons. */
+button { margin-top: 16px; padding: 10px 18px; background: #3559a8; color: white; border: 0; border-radius: 5px; cursor: pointer; }
+/* Styles post cards. */
+.post { background: white; padding: 18px; margin: 16px 0; border-radius: 8px; }
+/* Highlights errors. */
+.error { color: #a00; }
+/* Highlights success messages. */
+.success { color: #176b2c; }

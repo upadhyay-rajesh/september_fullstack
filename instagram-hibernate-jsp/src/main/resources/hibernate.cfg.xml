@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "https://hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+		<property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+		<property name="hibernate.connection.url">jdbc:mysql://localhost:3306/instagram_db?createDatabaseIfNotExist=true&amp;useSSL=false&amp;serverTimezone=UTC</property>
+		<property name="hibernate.connection.username">root</property>
+		<property name="hibernate.connection.password">rajesh</property>
+		<property name="hibernate.dialect">org.hibernate.dialect.MySQL8Dialect</property>
+		<property name="hibernate.hbm2ddl.auto">update</property>
+		<property name="hibernate.show_sql">true</property>
+		<property name="hibernate.format_sql">true</property>
+		<mapping class="com.instagramhibernate.entity.User" />
+		<mapping class="com.instagramhibernate.entity.Post" />
+		<mapping class="com.instagramhibernate.entity.Comment" />
+		<mapping class="com.instagramhibernate.entity.Like" />
+		<mapping class="com.instagramhibernate.entity.Follower" />
+		<mapping class="com.instagramhibernate.entity.Story" />
+		<mapping class="com.instagramhibernate.entity.StoryView" />
+		<mapping class="com.instagramhibernate.entity.Hashtag" />
+		<mapping class="com.instagramhibernate.entity.PostHashtag" />
+		<mapping class="com.instagramhibernate.entity.SavedPost" />
+		<mapping class="com.instagramhibernate.entity.Conversation" />
+		<mapping
+			class="com.instagramhibernate.entity.ConversationUser" />
+		<mapping class="com.instagramhibernate.entity.Message" />
+		<mapping class="com.instagramhibernate.entity.Notification" />
+	</session-factory>
+</hibernate-configuration>

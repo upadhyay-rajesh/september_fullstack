@@ -1,0 +1,9 @@
+Project rules followed:
+- No JavaScript files or inline JavaScript.
+- No AJAX or fetch/XHR.
+- No JSON endpoints or JSON dependency.
+- No lambda expressions or arrow syntax in Java.
+- Servlet controllers forward request attributes to JSP with RequestDispatcher.
+- Controller-facing service interfaces and service-facing DAO interfaces are included.
+- DAO implementations use SessionFactory, Session, Query, and explicit transactions.
+- Targeted for Tomcat 9 and javax.servlet, unlike the prior Jakarta/Tomcat 10 project.
