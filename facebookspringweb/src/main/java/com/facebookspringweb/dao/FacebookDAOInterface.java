@@ -6,4 +6,6 @@ public interface FacebookDAOInterface {
 
 	int createProfileDAO(FacebookUser fb);
 
+	int loginProfileDAO(FacebookUser fb);
+
 }

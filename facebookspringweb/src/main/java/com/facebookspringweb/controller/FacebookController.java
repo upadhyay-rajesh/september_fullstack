@@ -40,8 +40,30 @@ public class FacebookController {
 		return mv;
 	}
 	@RequestMapping("login.htm")
-	public ModelAndView loginProfile() {
+	public ModelAndView loginProfile(@RequestParam("pass") String password,@RequestParam("ee") String email) {
+		FacebookUser fb=new FacebookUser();
+		
+		fb.setPassword(password);
+		fb.setEmail(email);
+		
+		
+		int i=fs.loginProfileService(fb);
+		
+		
 		ModelAndView mv = new ModelAndView();
+		if(i>0) {
+			mv.addObject("myemail", email);
+			mv.setViewName("home.jsp");
+		
+	
+		
+		}
+		else {
+			mv.addObject("message", "Invalid Id and Password");
+			mv.setViewName("login.jsp");
+		}
+		
+		
 		return mv;
 	}
 	@RequestMapping("view.htm")

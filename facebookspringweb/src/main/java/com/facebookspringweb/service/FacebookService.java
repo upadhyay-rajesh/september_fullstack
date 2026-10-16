@@ -18,4 +18,10 @@ public class FacebookService implements FacebookServiceInterface {
 		return fd.createProfileDAO(fb);
 	}
 
+	@Override
+	public int loginProfileService(FacebookUser fb) {
+		// TODO Auto-generated method stub
+		return fd.loginProfileDAO(fb);
+	}
+
 }

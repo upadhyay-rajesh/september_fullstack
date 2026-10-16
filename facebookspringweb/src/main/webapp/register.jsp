@@ -45,10 +45,15 @@
   <button type="submit" class="btn btn-primary">Sign Up</button>
 
 </form>
-<%=   request.getAttribute("name1") %>
-<%=   request.getAttribute("p1") %>
-<%=   request.getAttribute("e1") %>
-<%=   request.getAttribute("a1") %>
+<%=   request.getAttribute("message") %>
+<br>
+your credentials are below <br>
+User Name is <%=   request.getAttribute("e1") %> <br>
+Password is <%=   request.getAttribute("p1") %> <br>
+<a href="login.jsp">Sign In</a>
+
+
+
   
   </body>
 </html>

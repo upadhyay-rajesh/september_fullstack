@@ -2,8 +2,16 @@ package com.facebookspringweb.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 
 @Entity
+@NamedQueries({
+    @NamedQuery(
+        name = "loginuser",
+        query = "FROM FacebookUser u where u.email=:em and u.password=:pw"
+    )
+})
 public class FacebookUser {
 	private String name;
 	private String password;
