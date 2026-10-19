@@ -1,7 +1,7 @@
 package com.springmvc.dao;
 
 import javax.persistence.EntityTransaction;
-import javax.transaction.Transactional;
+
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
