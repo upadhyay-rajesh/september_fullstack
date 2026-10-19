@@ -19,4 +19,9 @@ public class FacebookService implements FacebookServiceInterface {
 		return fd.createProfileDAO(fb);
 	}
 
+	@Override
+	public int loginProfileService(FacebookUser fb) {
+		return fd.loginProfileDAO(fb);
+	}
+
 }

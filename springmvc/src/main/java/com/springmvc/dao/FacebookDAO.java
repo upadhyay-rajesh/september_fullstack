@@ -1,7 +1,7 @@
 package com.springmvc.dao;
 
 import javax.persistence.EntityTransaction;
-
+import javax.persistence.Query;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -25,6 +25,13 @@ public class FacebookDAO implements FacebookDAOInterface {
 		ss.save(fb);
 		et.commit();
 		return 1;
+	}
+
+	@Override
+	public int loginProfileDAO(FacebookUser fb) {
+		Session ss = sf.openSession();
+		Query q = ss.createQuery("");
+		return 0;
 	}
 
 }
