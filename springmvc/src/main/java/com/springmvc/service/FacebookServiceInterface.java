@@ -8,4 +8,8 @@ public interface FacebookServiceInterface {
 
 	int loginProfileService(FacebookUser fb);
 
+	FacebookUser viewProfileService(FacebookUser fb);
+
+	int editProfileService(FacebookUser fb);
+
 }

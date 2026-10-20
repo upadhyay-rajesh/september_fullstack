@@ -8,4 +8,8 @@ public interface FacebookDAOInterface {
 
 	int loginProfileDAO(FacebookUser fb);
 
+	FacebookUser viewProfileDAO(FacebookUser fb);
+
+	int editProfileDAO(FacebookUser fb);
+
 }
