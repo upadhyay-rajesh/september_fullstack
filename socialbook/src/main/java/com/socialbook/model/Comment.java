@@ -1,0 +1,4 @@
+package com.socialbook.model;
+import javax.persistence.*;
+import java.time.LocalDateTime;
+@Entity @Table(name="comments") public class Comment { @Id @GeneratedValue(strategy=GenerationType.IDENTITY) private Long id; @ManyToOne(optional=false) private Post post; @ManyToOne(optional=false) private User author; @Column(nullable=false,length=2000) private String content; private LocalDateTime createdAt=LocalDateTime.now(); public Comment(){} public Long getId(){return id;} public Post getPost(){return post;} public void setPost(Post v){post=v;} public User getAuthor(){return author;} public void setAuthor(User v){author=v;} public String getContent(){return content;} public void setContent(String v){content=v;} public LocalDateTime getCreatedAt(){return createdAt;} }

@@ -1,0 +1,7 @@
+body { background:#f4f7fb; color:#172b4d; }
+.navbar { box-shadow:0 2px 12px rgba(0,0,0,.08); }
+.card { border:1px solid #e5eaf2; border-radius:14px; box-shadow:0 3px 12px rgba(24,50,90,.04); }
+.auth-wrap { max-width:480px; padding-top:8vh; }
+.post-content { white-space:pre-wrap; overflow-wrap:anywhere; }
+a { text-decoration:none; }
+a:hover { text-decoration:underline; }
